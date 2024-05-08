@@ -12,13 +12,15 @@
         <div class="container">
             <nav>
                 <img src="Logo.png" class="logo">
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">Portfolio</a></li>
-                    <li><a href="#">Contact</a></li>
+                <ul id="sidemenu">
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <i class="fa-sharp fa-solid fa-xmark" onclick="closemenu()"></i>
                 </ul>
+                <i class="fa-solid fa-bars" onclick="openmenu()"></i>
             </nav>
             <div class="header-text">
                 <p>Software Developer</p>
@@ -32,12 +34,19 @@
         <div class="container">
             <div class="row">
                 <div class="about-col-1">
-                    <img src="" >
+                    <img src="mojatena.png">
                 </div>
                 <div class="about-col-2">
                     <h1 class="sub-title">About Me</h1>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+                    <p>My name is Esther Wangui Kuria.I am currently a fourth year student in strathmore university.
+                        I am persuing a Bachelors degree in Business and Information Technology.
+                        I enjoy creating websites and during my free time i develop software for fun.Part-time I am also an academic writer with my own writing service called Kush Writes.
+                        I like challenges and opportunities that enable me to make use of my mind.
+                        I like participating in hackathons and meeting new people.
+                        I am a good leader and i strive every day to make good development ideas and decisions.
+                        For hobbies,I enjoy swimming,taking walks,community service at my local children's home and writing.
+                        I am overall a people person and enjoy gatherings.
+                    </p>
                         <div class="tab-titles">
                             <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
                             <p class="tab-links" onclick="opentab('experience')">Experience</p>
@@ -61,7 +70,7 @@
                         </div>
                         <div class="tab-contents" id="education">
                             <ul>
-                                <li><span>2017-2021</span><br>Bachelors degree at Strathore University</li>
+                                <li><span>2017-2021</span><br>Bachelors degree at Strathmore University</li>
                                 <li><span>2017-2021</span><br>High school certification at Bishop Gatimu Ngandu Girls' </li>
                             </ul>
                         </div>
@@ -77,19 +86,19 @@
                 <div>
                     <i class="fa-solid fa-code"></i>
                     <h2>Web Design</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                    <p>Web design is the process of creating visually appealing and functional websites for optimal user experience and engagement. </p>
                     <a href="#">Learn more</a>
                 </div>
                 <div>
                     <i class="fa-solid fa-crop"></i>
                     <h2>UI/UX design</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <p>UI/UX design focuses on crafting intuitive interfaces for seamless user interactions, prioritizing user needs and enhancing overall experience.</p>
                     <a href="#">Learn more</a>
                 </div>
                 <div>
                     <i class="fa-solid fa-gamepad"></i>
                     <h2>Game Design</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                    <p>Game design is the art of creating interactive experiences, blending storytelling, mechanics, and aesthetics to engage and entertain players. </p>
                     <a href="#">Learn more</a>
                 </div>
             </div>
@@ -141,8 +150,8 @@
             <div class="row">
                 <div class="contact-left">
                     <h1 class="sub-title">Contact Me</h1>
-                    <p><i class="fa-sharp fa-solid fa-paper-plane"></i>Esther.Kuria@strathmore.edu</p>
-                    <p><i class="fa-sharp fa-solid fa-paper-plane"></i>Estherkuria581@gmail.com</p>
+                    <p><i class="fa-solid fa-envelope"></i></i>Esther.Kuria@strathmore.edu</p>
+                    <p><i class="fa-solid fa-envelope"></i></i>Estherkuria581@gmail.com</p>
                     <p><i class="fa-solid fa-phone-volume"></i>0707928978</p>
                     <div class="social-icons">
                         <a href="https://www.instagram.com"><i class="fa-brands fa-instagram"></i></a>
@@ -154,12 +163,13 @@
 
                 </div>
                 <div class="contact-right">
-                    <form>
-                        <input type="text" name="" placeholder="Your Name" required>
-                        <input type="email" name="email" placeholder="Your Email" required>
+                    <form name="submit-to-google-sheet">
+                        <input type="text" name="Name" placeholder="Your Name" required>
+                        <input type="email" name="Email" placeholder="Your Email" required>
                         <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
                         <button type="submit" class="btn btn2">Submit</button>
                     </form>
+                    <span id="msg"></span>
                 </div>
             </div>
         </div>
@@ -183,5 +193,33 @@
             document.getElementById(tabname).classList.add("active-tab");
         }
     </script>
+    <script>
+        var sidemenu = document.getElementById("sidemenu");
+
+        function openmenu(){
+            sidemenu.style.right = "0"
+        }
+        function closemenu(){
+            sidemenu.style.right = "-200px"
+        }
+    </script>
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbwhX1hBWUUik84U91CD0O4F992y08VCcLnqxldklD96HOub_lnmyGa8CWnYfDtEyK8x/exec'
+        const form = document.forms['submit-to-google-sheet']
+        const msg = document.getElementById("msg")
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => {
+                msg.innerHTML = "Message sent succesfully!"
+                setTimeout(function(){
+                    msg.innerHTML = ""
+                }, 5000)
+                form.reset()
+            })
+            .catch(error => console.error('Error!', error.message))
+        })
+      </script>
 </body>
 </html>
